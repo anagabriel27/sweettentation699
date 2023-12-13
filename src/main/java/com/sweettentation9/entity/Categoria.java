@@ -7,7 +7,7 @@ import jakarta.persistence.ManyToOne;
 
 public class Categoria {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long Id;

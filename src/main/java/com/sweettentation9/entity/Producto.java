@@ -12,6 +12,7 @@ public class Producto {
 
     private double Precio;
     @ManyToOne
+    @JoinColumn(name="categoria_Id")
     private Categoria categoria;
 
     public Producto(Long id, String nombre, double precio, Categoria categoria) {
