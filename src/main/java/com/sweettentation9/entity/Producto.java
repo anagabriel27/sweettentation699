@@ -6,44 +6,44 @@ import jakarta.persistence.*;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nombre;
 
-    private Long Id;
-    private String Nombre;
-
-    private double Precio;
+    private double precio;
     @ManyToOne
-    @JoinColumn(name="categoria_Id")
     private Categoria categoria;
 
+    public Producto() {}
+
     public Producto(Long id, String nombre, double precio, Categoria categoria) {
-        Id = id;
-        Nombre = nombre;
-        Precio = precio;
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
         this.categoria = categoria;
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public double getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(double precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
     public Categoria getCategoria() {
