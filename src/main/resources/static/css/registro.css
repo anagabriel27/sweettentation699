@@ -1,0 +1,14 @@
+body {
+
+    background-color: darkseagreen;
+}
+
+/* Estilos específicos de la página de registro */
+form {
+    width: 400px;
+    margin: 0 auto;
+    background-color: red;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

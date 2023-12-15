@@ -1,17 +1,14 @@
 package com.sweettentation9.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jdk.jfr.Timestamp;
 
 import java.util.Date;
 
 @Entity
 public class RegistroUsuario {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+        @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
 
         private String nombre;
@@ -25,7 +22,13 @@ public class RegistroUsuario {
         private String password;
 
         private String userName;
+        @Temporal(TemporalType.TIMESTAMP)
         private Date fechaCreacion;
+
+        @PrePersist
+        protected void onCreate() {
+                fechaCreacion = new Date();
+        }
 
         public RegistroUsuario() {
         }
@@ -38,7 +41,10 @@ public class RegistroUsuario {
                 this.telefono = telefono;
                 this.password = password;
                 this.userName = userName;
-                this.fechaCreacion = fechaCreacion;
+                this.fechaCreacion = new Date();
+        }
+
+        public RegistroUsuario( String nombre, String email, String direccion, Long telefono, String password, String userName) {
         }
 
         public Long getId() {

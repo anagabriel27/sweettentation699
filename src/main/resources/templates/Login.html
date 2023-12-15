@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<h2>Login SweetTentation</h2>
+
+<form action="/LoginUsuario" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}" />
+    <br>
+
+    <label for="password">Contraseña:</label>
+    <div class="password-container">
+        <input type="text" id="password" name="password" required>
+        <button type="button" onclick="togglePasswordVisibility()">
+            <i class="fas fa-eye"></i>
+        </button>
+    </div>
+    <br>
+
+    <button type="submit">Login</button>
+    <a th:href="@{/Registro}"><button type="button">Registro</button></a>
+</form>
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    }
+</script>
+
+</body>
+</html>
