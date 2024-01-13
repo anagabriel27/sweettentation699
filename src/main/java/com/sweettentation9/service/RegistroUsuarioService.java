@@ -11,5 +11,6 @@ public interface RegistroUsuarioService {
     Optional<RegistroUsuario> obtenerUsuarioPorId(Long id);
     Optional<RegistroUsuario> obtenerUsuarioPorUserName(String userName);
     RegistroUsuario guardarUsuario(RegistroUsuario usuario);
+
     void eliminarUsuario(Long id);
 }
